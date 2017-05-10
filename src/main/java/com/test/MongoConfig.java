@@ -1,4 +1,4 @@
-package main.java.com.test;
+package com.test;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;

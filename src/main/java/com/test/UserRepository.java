@@ -1,4 +1,4 @@
-package main.java.com.test;
+package com.test;
 
 import java.util.List;
 
