@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
  * This is the User Rest Controller that
- * interracts in all ways with the User
+ * Interacts in all ways with the User
  * entity
  * 
  * capabilities
@@ -56,6 +56,7 @@ public class UserController {
 		logger.info("getting user {}",userid);
         // hit the database to get the User
 		User user = repo.findByuserid(userid);
+		
 		if(null == user){
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		}
@@ -64,6 +65,15 @@ public class UserController {
 		// return user
     }
 	
+	/**
+	 * This is the createUser Method that creates a new User if no user already exists.
+	 * 
+	 * Responses
+	 * 	-201 Created
+	 * 	-409 Conflict (User Already exists)
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(method = RequestMethod.POST, value="/addUser", consumes="application/json")
 	public ResponseEntity<?> createUser(@RequestBody User user) {
 		logger.info("Creating user: {}",user.getUserid());

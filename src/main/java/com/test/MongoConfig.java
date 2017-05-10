@@ -11,7 +11,7 @@ public class MongoConfig {
 	MongoTemplate mongoTemplate() throws Exception {
 
 		MongoTemplate mongoTemplate =
-			new MongoTemplate(new MongoClient("127.0.0.1",27017),"test");
+			new MongoTemplate(new MongoClient("localhost",27017),"test");
 		return mongoTemplate;
 
 	}
